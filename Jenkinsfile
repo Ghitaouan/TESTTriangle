@@ -40,5 +40,11 @@ pipeline{
                           recipientProviders: [requestor()],
 			  subject: "Build"
         }
+	  success {
+                emailext body: "REUSSITE.",
+                          to: 'ghita.ouannane@edu.ece.fr',
+                          recipientProviders: [requestor()],
+			  subject: "REUSSITE"
+        }
     }
 }
