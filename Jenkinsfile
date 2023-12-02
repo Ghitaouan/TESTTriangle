@@ -33,4 +33,12 @@ pipeline{
         	}
     	}
 	}
+  post {
+        failure {
+                emailext body: "Le Build a échoué.",
+                          to: 'g.ouannane@gmail.com',
+                          recipientProviders: [requestor()],
+			  subject: "Build"
+        }
+    }
 }
