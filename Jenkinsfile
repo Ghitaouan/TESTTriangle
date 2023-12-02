@@ -34,17 +34,11 @@ pipeline{
     	}
 	}
   post {
-        failure {
-                emailext body: "Le Build a échoué.",
+        success {
+                emailext body: "REUSSITE.",
                           to: 'g.ouannane@gmail.com',
                           recipientProviders: [requestor()],
 			  subject: "Build"
-        }
-	  success {
-                emailext body: "REUSSITE.",
-                          to: 'ghita.ouannane@edu.ece.fr',
-                          recipientProviders: [requestor()],
-			  subject: "REUSSITE"
         }
     }
 }
